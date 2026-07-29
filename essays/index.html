@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="An archive of Xing Zhong’s early Chinese writings, with short English introductions.">
-  <meta name="theme-color" content="#f3eee4">
-  <title>Early Writings — Xing Zhong</title>
+  <meta name="theme-color" content="#ffffff">
+  <title>Early Writings · Xing Zhong</title>
   <link rel="icon" href="../assets/xing-zhong.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../css/style.css">
   <script>
     (function () {
-      var saved = localStorage.getItem("theme");
-      var preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.dataset.theme = saved || preferred;
+      var savedTheme = localStorage.getItem("theme");
+      var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = savedTheme || systemTheme;
     })();
   </script>
 </head>
@@ -20,55 +20,60 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="wordmark" href="../" aria-label="Xing Zhong, home">
-        <span class="wordmark-mark">XZ</span>
-        <span>Xing Zhong</span>
-      </a>
-      <div class="nav-links">
-        <a href="../#about">About</a>
-        <a href="../#research">Research</a>
-        <a href="./" aria-current="page">Writings</a>
+    <nav class="navbar container" aria-label="Primary navigation">
+      <div class="social-nav" aria-label="Contact links">
+        <a href="mailto:xingzhong.cs@gmail.com" aria-label="Email Xing Zhong" title="Email"><span aria-hidden="true">@</span></a>
+        <a href="https://github.com/FreshZhong" target="_blank" rel="noopener" aria-label="Xing Zhong on GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
       </div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
-        <span class="theme-icon" aria-hidden="true"></span>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="../#about">about</a>
+        <a href="../#research">research</a>
+        <a class="active" href="./">writings</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Change theme">
+          <span aria-hidden="true">◐</span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main class="archive-page" id="main">
-    <header class="archive-page-header">
-      <p class="eyebrow">Archive · Chinese originals / English context</p>
-      <h1>Early<br><em>Writings.</em></h1>
-      <p class="archive-intro">
-        A growing collection of essays from my middle-school years. The original
-        Chinese is preserved as written; each piece begins with a short English
-        introduction to its moment and subject.
-      </p>
-    </header>
+  <main class="container page archive-page" id="main">
+    <article>
+      <header class="page-header">
+        <h1><strong>Early</strong> Writings</h1>
+        <p class="page-description">
+          A growing archive of middle-school essays. Each entry will preserve the
+          original Chinese text and begin with a short English introduction.
+        </p>
+      </header>
 
-    <section class="archive-list" aria-labelledby="archive-status">
-      <div class="archive-empty">
-        <span class="number">01—02</span>
-        <div>
-          <h2 id="archive-status">The first two pieces are being prepared.</h2>
-          <p>
-            Their titles, original manuscripts, and publication dates will appear
-            here once the source texts have been added to the archive.
-          </p>
+      <section class="content-section archive-section" aria-labelledby="archive-title">
+        <h2 id="archive-title">archive</h2>
+        <div class="writing-row">
+          <div class="writing-meta">01–02</div>
+          <div class="writing-copy">
+            <p class="writing-title">The first two pieces are being prepared.</p>
+            <p>
+              Titles, dates, English introductions, and original manuscripts will
+              appear here once the source texts are added.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <p class="archive-note">
-      This archive will remain chronological, preserving the distance between
-      an earlier voice and the person reading it today.
-    </p>
+      <p class="back-link"><a href="../">← Back to the homepage</a></p>
+    </article>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year">2026</span> Xing Zhong</p>
-    <p><a href="../">Return home</a></p>
+    <div class="container">
+      <p>© <span id="year">2026</span> Xing Zhong</p>
+      <p>Original Chinese · English context</p>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>

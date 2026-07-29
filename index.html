@@ -3,178 +3,144 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Xing Zhong’s personal corner for research interests, quiet observations, and early writings.">
-  <meta name="theme-color" content="#f3eee4">
+  <meta name="description" content="Xing Zhong — undergraduate student interested in reinforcement learning, multimodal intelligence, embodied AI, and test-time optimisation.">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Xing Zhong — A place for ideas in progress">
-  <meta property="og:description" content="Research interests, personal notes, and an archive of early Chinese writings.">
+  <meta property="og:title" content="Xing Zhong">
+  <meta property="og:description" content="Personal homepage, research interests, and early writings.">
   <meta property="og:url" content="https://freshzhong.github.io/">
-  <meta property="og:image" content="https://freshzhong.github.io/assets/og.png">
+  <meta property="og:image" content="https://freshzhong.github.io/assets/og-academic.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Xing Zhong — A place for ideas in progress">
-  <meta name="twitter:description" content="Research interests, personal notes, and an archive of early Chinese writings.">
-  <meta name="twitter:image" content="https://freshzhong.github.io/assets/og.png">
-  <title>Xing Zhong — Personal Notes & Research</title>
+  <meta name="twitter:title" content="Xing Zhong">
+  <meta name="twitter:description" content="Personal homepage, research interests, and early writings.">
+  <meta name="twitter:image" content="https://freshzhong.github.io/assets/og-academic.png">
+  <title>Xing Zhong</title>
   <link rel="icon" href="assets/xing-zhong.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function () {
-      var saved = localStorage.getItem("theme");
-      var preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      document.documentElement.dataset.theme = saved || preferred;
+      var savedTheme = localStorage.getItem("theme");
+      var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = savedTheme || systemTheme;
     })();
   </script>
 </head>
-<body class="home-page">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="wordmark" href="#top" aria-label="Xing Zhong, home">
-        <span class="wordmark-mark">XZ</span>
-        <span>Xing Zhong</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#writings">Writings</a>
+    <nav class="navbar container" aria-label="Primary navigation">
+      <div class="social-nav" aria-label="Contact links">
+        <a href="mailto:xingzhong.cs@gmail.com" aria-label="Email Xing Zhong" title="Email">
+          <span aria-hidden="true">@</span>
+        </a>
+        <a href="https://github.com/FreshZhong" target="_blank" rel="noopener" aria-label="Xing Zhong on GitHub" title="GitHub">
+          <span aria-hidden="true">GH</span>
+        </a>
       </div>
 
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
-        <span class="theme-icon" aria-hidden="true"></span>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a class="active" href="#about">about</a>
+        <a href="#research">research</a>
+        <a href="#writings">writings</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Change theme">
+          <span aria-hidden="true">◐</span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">Personal notes · Academic interests</p>
-        <h1>A place for<br><em>ideas in progress.</em></h1>
-        <p class="hero-intro">
-          I’m <strong>Xing Zhong</strong>, an undergraduate in Intelligent Science and
-          Technology at Shanghai University. This is a quiet corner for what I study,
-          what I notice, and the words I want to keep.
-        </p>
-        <div class="hero-actions">
-          <a class="text-link primary-link" href="#writings">Read my writings <span aria-hidden="true">↘</span></a>
-          <a class="text-link" href="mailto:xingzhong.cs@gmail.com">Write to me <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
+  <main class="container page" id="main">
+    <article>
+      <header class="page-header">
+        <h1><strong>Xing</strong> Zhong</h1>
+      </header>
 
-      <aside class="portrait-card" aria-label="A short profile">
-        <div class="portrait-frame">
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 class="sr-only" id="about-title">About</h2>
+
+        <figure class="profile">
           <img src="assets/xing-zhong.jpg" alt="Portrait of Xing Zhong" width="480" height="640">
-        </div>
-        <div class="portrait-caption">
-          <span>Shanghai University</span>
-          <span>Undergraduate</span>
-        </div>
-      </aside>
+        </figure>
 
-      <p class="margin-note" aria-hidden="true">Learning to ask better questions.</p>
-    </section>
+        <div class="intro">
+          <p>
+            <strong>Xing Zhong</strong> is a third-year undergraduate student in
+            <strong>Intelligent Science and Technology</strong> at
+            <a href="https://en.shu.edu.cn/" target="_blank" rel="noopener">Shanghai University</a>.
+          </p>
+          <p>
+            He is interested in reinforcement learning and multimodal intelligence,
+            with a focus on how intelligent systems reason, act, and adapt under
+            practical compute constraints. His current interests include:
+          </p>
+          <ul>
+            <li>
+              <strong>Reinforcement Learning</strong>: learning and evaluation for
+              agents that interact with tools and environments
+            </li>
+            <li>
+              <strong>Multimodal Intelligence</strong>: visual reasoning, generative
+              models, and evidence-aware evaluation
+            </li>
+            <li>
+              <strong>Embodied AI and Efficient Inference</strong>: world models,
+              test-time optimisation, and systems-aware acceleration
+            </li>
+          </ul>
+          <p>
+            This website also keeps a small archive of personal writing. It begins
+            with essays from his middle-school years and will grow over time.
+          </p>
+        </div>
+      </section>
 
-    <section class="section-grid about-section" id="about">
-      <div class="section-label">
-        <span>01</span>
-        <h2>About</h2>
-      </div>
-      <div class="section-content prose">
-        <p class="lead">
-          I am a third-year undergraduate who enjoys moving between precise technical
-          questions and slower, more personal forms of reflection.
-        </p>
-        <p>
-          My academic life is grounded in intelligent systems. Away from coursework,
-          I return to writing: not to present finished answers, but to preserve how a
-          question looked at a particular moment. The archive on this site begins with
-          essays from my middle-school years and will continue to grow over time.
-        </p>
-      </div>
-      <dl class="facts" aria-label="Profile details">
-        <div>
-          <dt>School</dt>
-          <dd>Shanghai University</dd>
+      <section class="content-section" id="research" aria-labelledby="research-title">
+        <h2 id="research-title">research interests</h2>
+        <div class="research-note">
+          <p>
+            Xing is curious about the boundary between model reasoning and system
+            design: what evidence helps a model revise an answer, how test-time
+            computation should be allocated, and how learning systems can remain
+            effective when memory and compute are limited.
+          </p>
         </div>
-        <div>
-          <dt>Programme</dt>
-          <dd>Intelligent Science and Technology</dd>
-        </div>
-        <div>
-          <dt>Current</dt>
-          <dd>Undergraduate · Year 3</dd>
-        </div>
-        <div>
-          <dt>Email</dt>
-          <dd><a href="mailto:xingzhong.cs@gmail.com">xingzhong.cs@gmail.com</a></dd>
-        </div>
-      </dl>
-    </section>
+      </section>
 
-    <section class="section-grid research-section" id="research">
-      <div class="section-label">
-        <span>02</span>
-        <h2>Research</h2>
-      </div>
-      <div class="section-content">
-        <p class="kicker">Questions I’m following</p>
-        <h3>How can intelligent systems reason, act, and adapt—without losing sight of practical constraints?</h3>
-        <p>
-          My interests lie at the intersection of reinforcement learning and multimodal
-          intelligence, with a particular curiosity about visual generative models,
-          embodied AI, and test-time optimisation. I care about both the reasoning
-          behaviour of models and the systems questions that make those models usable:
-          evidence, evaluation, efficiency, and adaptation under limited compute.
-        </p>
-        <div class="interest-line" aria-label="Research interest keywords">
-          <span>Reinforcement Learning</span>
-          <span>Multimodal Intelligence</span>
-          <span>Embodied AI</span>
-          <span>Test-time Optimisation</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-grid writings-section" id="writings">
-      <div class="section-label">
-        <span>03</span>
-        <h2>Writings</h2>
-      </div>
-      <div class="section-content">
-        <div class="writings-heading">
-          <div>
-            <p class="kicker">Early writing archive</p>
-            <h3>Words kept from another time.</h3>
-          </div>
-          <a class="text-link" href="essays/">View the archive <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="archive-preview">
-          <div class="archive-index" aria-hidden="true">01—02</div>
-          <div>
+      <section class="content-section" id="writings" aria-labelledby="writings-title">
+        <h2 id="writings-title"><a href="essays/">early writings</a></h2>
+        <div class="writing-row">
+          <div class="writing-meta">Archive</div>
+          <div class="writing-copy">
+            <a class="writing-title" href="essays/">Middle-school essays</a>
             <p>
-              The first two essays in this collection were written during my
-              middle-school years. They will be presented in their original Chinese,
-              each accompanied by a short English note for context.
+              Original Chinese texts with short English introductions. The first
+              two pieces will be added after the manuscripts are prepared.
             </p>
-            <p class="archive-status">The original manuscripts are being prepared for publication.</p>
+            <a class="small-link" href="essays/">View archive →</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="closing">
-      <p class="eyebrow">For conversations, questions, or a simple hello</p>
-      <h2>Let’s exchange a thought.</h2>
-      <a class="email-link" href="mailto:xingzhong.cs@gmail.com">xingzhong.cs@gmail.com <span aria-hidden="true">↗</span></a>
-    </section>
+      <section class="content-section contact-section" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">contact</h2>
+        <p>
+          For academic conversations, questions, or a simple hello:
+          <a href="mailto:xingzhong.cs@gmail.com">xingzhong.cs@gmail.com</a>.
+        </p>
+      </section>
+    </article>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year">2026</span> Xing Zhong</p>
-    <p>Made slowly, updated honestly.</p>
+    <div class="container">
+      <p>© <span id="year">2026</span> Xing Zhong</p>
+      <p>Last updated July 2026</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
