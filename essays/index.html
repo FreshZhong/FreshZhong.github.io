@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An archive of Xing Zhong’s early Chinese writings, with short English introductions.">
+  <meta name="theme-color" content="#f3eee4">
+  <title>Early Writings — Xing Zhong</title>
+  <link rel="icon" href="../assets/xing-zhong.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved || preferred;
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="wordmark" href="../" aria-label="Xing Zhong, home">
+        <span class="wordmark-mark">XZ</span>
+        <span>Xing Zhong</span>
+      </a>
+      <div class="nav-links">
+        <a href="../#about">About</a>
+        <a href="../#research">Research</a>
+        <a href="./" aria-current="page">Writings</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="archive-page" id="main">
+    <header class="archive-page-header">
+      <p class="eyebrow">Archive · Chinese originals / English context</p>
+      <h1>Early<br><em>Writings.</em></h1>
+      <p class="archive-intro">
+        A growing collection of essays from my middle-school years. The original
+        Chinese is preserved as written; each piece begins with a short English
+        introduction to its moment and subject.
+      </p>
+    </header>
+
+    <section class="archive-list" aria-labelledby="archive-status">
+      <div class="archive-empty">
+        <span class="number">01—02</span>
+        <div>
+          <h2 id="archive-status">The first two pieces are being prepared.</h2>
+          <p>
+            Their titles, original manuscripts, and publication dates will appear
+            here once the source texts have been added to the archive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <p class="archive-note">
+      This archive will remain chronological, preserving the distance between
+      an earlier voice and the person reading it today.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Xing Zhong</p>
+    <p><a href="../">Return home</a></p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

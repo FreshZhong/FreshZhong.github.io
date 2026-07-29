@@ -1,87 +1,54 @@
-// Theme toggle
 (function () {
-  const toggle = document.getElementById('theme-toggle');
-  const html = document.documentElement;
+  var root = document.documentElement;
+  var toggle = document.getElementById("theme-toggle");
+  var header = document.querySelector(".site-header");
+  var year = document.getElementById("year");
 
-  const saved = localStorage.getItem('theme');
-  if (saved) {
-    html.setAttribute('data-theme', saved);
+  function updateThemeLabel() {
+    if (!toggle) return;
+    var isDark = root.dataset.theme === "dark";
+    toggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
   }
 
-  toggle.addEventListener('click', function () {
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  });
-})();
-
-// Typewriter effect
-(function () {
-  const el = document.querySelector('.typewriter');
-  if (!el) return;
-
-  const texts = JSON.parse(el.dataset.texts || '["一个热爱编程的开发者", "全栈工程师 & 开源爱好者"]');
-  let i = 0;
-  let j = 0;
-  let forward = true;
-  let timer;
-
-  function tick() {
-    const current = texts[i];
-
-    if (forward) {
-      j++;
-      if (j > current.length) {
-        forward = false;
-        timer = setTimeout(tick, 1500);
-        return;
-      }
-    } else {
-      j--;
-      if (j === 0) {
-        forward = true;
-        i = (i + 1) % texts.length;
-        timer = setTimeout(tick, 300);
-        return;
-      }
-    }
-
-    el.textContent = current.slice(0, j);
-    timer = setTimeout(tick, forward ? 80 : 40);
+  if (toggle) {
+    updateThemeLabel();
+    toggle.addEventListener("click", function () {
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", root.dataset.theme);
+      updateThemeLabel();
+    });
   }
 
-  tick();
-})();
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-// Scroll reveal (Intersection Observer)
-(function () {
+  function updateHeader() {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 12);
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  var revealItems = document.querySelectorAll(".section-grid, .closing, .archive-page-header, .archive-list");
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealItems.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('section').forEach(function (section) {
-    section.classList.add('reveal');
-
-    var h2 = section.querySelector('h2');
-    if (h2) h2.classList.add('reveal');
-
-    var cards = section.querySelectorAll('.project-card, .skill-tag');
-    cards.forEach(function (card, idx) {
-      card.classList.add('reveal');
-      card.style.transitionDelay = (idx * 0.05) + 's';
-    });
-
-    var paragraphs = section.querySelectorAll('p');
-    paragraphs.forEach(function (p) {
-      p.classList.add('reveal');
-    });
-
-    observer.observe(section);
+  revealItems.forEach(function (item) {
+    item.classList.add("reveal");
+    observer.observe(item);
   });
 })();
