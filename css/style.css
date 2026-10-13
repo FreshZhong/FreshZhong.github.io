@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --max-content-width: 980px;
+  --max-content-width: 860px;
   --bg: #f8f5f0;
   --surface: #fffdf9;
   --text: #292624;
@@ -45,7 +45,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0 0 70px;
+  padding: 0;
   color: var(--text);
   background: var(--bg);
   font-family: var(--serif);
@@ -184,7 +184,7 @@ a:focus-visible {
   position: relative;
   padding: 0.7rem 0.78rem;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.015em;
 }
 
@@ -256,12 +256,12 @@ a:focus-visible {
 }
 
 .page {
-  padding-top: 7.5rem;
+  padding-top: 7rem;
 }
 
 .page-header {
   position: relative;
-  margin-bottom: 3.4rem;
+  margin-bottom: 2.8rem;
   padding-bottom: 1.5rem;
 }
 
@@ -315,48 +315,19 @@ a:focus-visible {
 }
 
 .about {
-  display: grid;
-  grid-template-areas: "intro profile";
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 270px);
-  gap: clamp(2.8rem, 6vw, 4.6rem);
-  align-items: start;
-}
-
-.profile {
-  grid-area: profile;
-  width: 100%;
-  max-width: 270px;
-  margin: 0;
-  justify-self: end;
-  padding: 7px 7px 0;
-  border: 1px solid var(--divider);
-  background: var(--bg);
-}
-
-.profile figcaption {
-  padding: 0.65rem 0.2rem 0.7rem;
-  color: var(--text-light);
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-  text-align: center;
-}
-
-.profile img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1px;
-  filter: saturate(0.86) contrast(0.98);
+  width: min(100%, 720px);
 }
 
 .intro {
-  grid-area: intro;
-  max-width: 650px;
+  max-width: 720px;
 }
 
 .intro p:first-of-type {
   margin-top: 0;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
 }
 
 .intro,
@@ -367,7 +338,7 @@ a:focus-visible {
 
 .content-section {
   width: min(100%, 860px);
-  margin-top: 5rem;
+  margin-top: 4.3rem;
 }
 
 .section-heading {
@@ -413,7 +384,7 @@ a:focus-visible {
 }
 
 .research-note {
-  max-width: 760px;
+  width: 100%;
   padding: 1.35rem 1.6rem;
   border-left: 2px solid var(--theme);
   background: var(--surface);
@@ -474,7 +445,11 @@ p.writing-title {
 }
 
 .contact-section {
-  margin-bottom: 6rem;
+  margin-bottom: 4.5rem;
+}
+
+.contact-section a {
+  overflow-wrap: anywhere;
 }
 
 .archive-page {
@@ -602,24 +577,6 @@ p.writing-title {
     margin-bottom: 2.5rem;
   }
 
-  .about {
-    grid-template-areas:
-      "profile"
-      "intro";
-    grid-template-columns: 1fr;
-    gap: 2.2rem;
-  }
-
-  .brand-name {
-    display: none;
-  }
-
-  .profile {
-    width: min(54%, 220px);
-    margin: 0;
-    justify-self: start;
-  }
-
   .writing-row {
     grid-template-columns: 1fr;
     gap: 0.55rem;
@@ -637,17 +594,6 @@ p.writing-title {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.25rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .profile {
-    width: 100%;
-    margin: 0;
-  }
-
-  .profile img {
-    width: min(100%, 260px);
   }
 }
 
