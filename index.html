@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Xing Zhong — undergraduate student interested in reinforcement learning, multimodal intelligence, embodied AI, and test-time optimisation.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f8f5f0">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Xing Zhong">
   <meta property="og:description" content="Personal homepage, research interests, and early writings.">
@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://freshzhong.github.io/assets/og-editorial.png">
   <title>Xing Zhong</title>
   <link rel="icon" href="assets/xing-zhong.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="css/style.css?v=20260730-layout2">
+  <link rel="stylesheet" href="css/style.css?v=20261013-editorial">
   <script>
     (function () {
       var savedTheme = localStorage.getItem("theme");
@@ -30,14 +30,10 @@
 
   <header class="site-header">
     <nav class="navbar container" aria-label="Primary navigation">
-      <div class="social-nav" aria-label="Contact links">
-        <a href="mailto:xingzhong.cs@gmail.com" aria-label="Email Xing Zhong" title="Email">
-          <span aria-hidden="true">@</span>
-        </a>
-        <a href="https://github.com/FreshZhong" target="_blank" rel="noopener" aria-label="Xing Zhong on GitHub" title="GitHub">
-          <span aria-hidden="true">GH</span>
-        </a>
-      </div>
+      <a class="site-brand" href="#main" aria-label="Xing Zhong, home">
+        <span class="brand-mark" aria-hidden="true">XZ</span>
+        <span class="brand-name">Xing Zhong</span>
+      </a>
 
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -57,7 +53,9 @@
   <main class="container page" id="main">
     <article>
       <header class="page-header">
+        <p class="eyebrow">Research · Notes · Writings</p>
         <h1><strong>Xing</strong> Zhong</h1>
+        <p class="page-tagline">Undergraduate researcher interested in reinforcement learning and intelligent agents.</p>
       </header>
 
       <section class="about" id="about" aria-labelledby="about-title">
@@ -65,6 +63,7 @@
 
         <figure class="profile">
           <img src="assets/xing-zhong.jpg" alt="Portrait of Xing Zhong" width="480" height="640">
+          <figcaption>Shanghai University · Year 3</figcaption>
         </figure>
 
         <div class="intro">
@@ -76,22 +75,8 @@
           <p>
             I work mainly on reinforcement learning and multimodal intelligence.
             I’m interested in how learning systems reason and act, especially when
-            memory and compute are limited. At the moment, I’m exploring:
+            memory and compute are limited.
           </p>
-          <ul>
-            <li>
-              <strong>Reinforcement learning</strong> for agents that use tools and
-              interact with environments
-            </li>
-            <li>
-              <strong>Multimodal learning</strong>, including visual reasoning,
-              generative models, and evidence-aware evaluation
-            </li>
-            <li>
-              <strong>Efficient inference</strong> for world models and other
-              compute-intensive generative systems
-            </li>
-          </ul>
           <p>
             I also write from time to time. This site keeps a small archive that
             begins with essays from my middle-school years.
@@ -100,7 +85,10 @@
       </section>
 
       <section class="content-section" id="research" aria-labelledby="research-title">
-        <h2 id="research-title">research interests</h2>
+        <div class="section-heading">
+          <span class="section-number" aria-hidden="true">01</span>
+          <h2 id="research-title">research interests</h2>
+        </div>
         <div class="research-note">
           <p>
             My main research interest is reinforcement learning, particularly the
@@ -113,7 +101,10 @@
       </section>
 
       <section class="content-section" id="writings" aria-labelledby="writings-title">
-        <h2 id="writings-title"><a href="essays/">early writings</a></h2>
+        <div class="section-heading">
+          <span class="section-number" aria-hidden="true">02</span>
+          <h2 id="writings-title"><a href="essays/">early writings</a></h2>
+        </div>
         <div class="writing-row">
           <div class="writing-meta">Archive</div>
           <div class="writing-copy">
@@ -128,7 +119,10 @@
       </section>
 
       <section class="content-section contact-section" id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">contact</h2>
+        <div class="section-heading">
+          <span class="section-number" aria-hidden="true">03</span>
+          <h2 id="contact-title">contact</h2>
+        </div>
         <p>
           If you’d like to talk about research—or simply say hello—you can reach me
           at <a href="mailto:xingzhong.cs@gmail.com">xingzhong.cs@gmail.com</a>.
@@ -140,10 +134,13 @@
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year">2026</span> Xing Zhong</p>
-      <p>Last updated July 2026</p>
+      <div class="footer-links">
+        <a href="mailto:xingzhong.cs@gmail.com">Email</a>
+        <a href="https://github.com/FreshZhong" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260730-layout2"></script>
+  <script src="js/main.js?v=20261013-editorial"></script>
 </body>
 </html>
